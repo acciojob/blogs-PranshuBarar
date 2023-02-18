@@ -48,9 +48,8 @@ public class ImageService {
     }
 
     private int no_Images(int scrl, int scrb, int imgl, int imgb) {
-        int scrarea = scrl * scrb;
-        int imgarea = imgl * imgb;
-
-        return scrarea/imgarea;
+        int lenC = scrl/imgl;
+        int lenB = scrb/imgb;
+        return lenC*lenB;
     }
 }
