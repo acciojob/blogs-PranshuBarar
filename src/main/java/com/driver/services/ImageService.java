@@ -20,7 +20,7 @@ public class ImageService {
         Blog blog = blogRepository2.findById(blogId).get();
         Image image = new Image(blog,description,dimensions);
         blog.getImageList().add(image);
-        imageRepository2.save(image);
+        blogRepository2.save(blog);
         return image;
         //Here I am not explicitly adding image in image-repository because due to cascading effect
     }
