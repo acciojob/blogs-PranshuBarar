@@ -21,7 +21,7 @@ public class ImageService {
         Image image = new Image(blog,description,dimensions);
         blog.getImageList().add(image);
         return image;
-        //Here I am not explicitly adding image in imagerepository because due to cascading effect
+        //Here I am not explicitly adding image in image-repository because due to cascading effect
     }
 
     public void deleteImage(Integer id){
@@ -50,11 +50,6 @@ public class ImageService {
         int scrarea = scrl * scrb;
         int imgarea = imgl * imgb;
 
-        int countImg = 0;
-        while(scrarea>0){
-            scrarea = scrarea/imgarea;
-            countImg++;
-        }
-        return countImg;
+        return scrarea/imgarea;
     }
 }
