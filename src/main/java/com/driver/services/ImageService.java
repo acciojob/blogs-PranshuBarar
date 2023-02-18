@@ -32,9 +32,12 @@ public class ImageService {
         imageRepository2.deleteById(id);
     }
 
-    public int countImagesInScreen(Integer id, String screenDimensions) {
+    public int countImagesInScreen(Integer id, String screenDimensions) throws Exception {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
         String [] scrarray = screenDimensions.split("X");
+        if(!imageRepository2.findById(id).isPresent()){
+            throw new Exception();
+        }
         Image image = imageRepository2.findById(id).get();
 
         String imageDimensions = image.getDimensions();
